@@ -18,34 +18,42 @@ final router = GoRouter(
   routes: [
     StatefulShellRoute.indexedStack(
       branches: [
-        StatefulShellBranch(routes: [
-          GoRoute(
-              path: '/',
-              routes: [
-                GoRoute(
-                  path: 'details/:id',
-                  builder: (context, state) => DetailsScreen(
-                    id: state.pathParameters['id']!,
-                    additionalInfo: state.uri.queryParameters['additionalInfo'],
-                  ),
-                )
-              ],
-              builder: (context, state) => const MainScreen())
-        ], navigatorKey: shellNavigatorHomeKey),
-        StatefulShellBranch(routes: [
-          GoRoute(
-              path: '/profile',
-              routes: [
-                GoRoute(
-                  path: 'details/:id',
-                  builder: (context, state) => DetailsScreen(
-                    id: state.pathParameters['id']!,
-                    additionalInfo: state.uri.queryParameters['additionalInfo'],
-                  ),
-                )
-              ],
-              builder: (context, state) => const ProfileScreen())
-        ], navigatorKey: shellNavigatorProfileKey),
+        StatefulShellBranch(
+          navigatorKey: shellNavigatorHomeKey,
+          routes: [
+            GoRoute(
+                path: '/',
+                routes: [
+                  GoRoute(
+                    path: 'details/:id',
+                    builder: (context, state) => DetailsScreen(
+                      id: state.pathParameters['id']!,
+                      additionalInfo:
+                          state.uri.queryParameters['additionalInfo'],
+                    ),
+                  )
+                ],
+                builder: (context, state) => const MainScreen())
+          ],
+        ),
+        StatefulShellBranch(
+          navigatorKey: shellNavigatorProfileKey,
+          routes: [
+            GoRoute(
+                path: '/profile',
+                routes: [
+                  GoRoute(
+                    path: 'details/:id',
+                    builder: (context, state) => DetailsScreen(
+                      id: state.pathParameters['id']!,
+                      additionalInfo:
+                          state.uri.queryParameters['additionalInfo'],
+                    ),
+                  )
+                ],
+                builder: (context, state) => const ProfileScreen())
+          ],
+        ),
       ],
       builder: (context, state, navigationShell) {
         return ScaffoldWithBottomBar(navigationShell: navigationShell);

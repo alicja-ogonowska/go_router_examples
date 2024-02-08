@@ -1,16 +1,18 @@
-# go_router_workshop
+# Go Router Workshop
 
-A new Flutter project.
+This repository contains a set of simple examples showcasing navigation in
+Flutter apps. First example (main_navigator_1.dart) utilizes Navigator 1.0, the
+rest revolves around Navigator 2.0 using go_router package.
 
-## Getting Started
+Examples use go_router package with version 13.1.0.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Each example resides in a separate entrypoint file.
+- main_navigator_1.dart - Basic example of navigation using Navigator 1.0 API
+- main_go_router_1.dart - Simple examples of go_router configuration - route
+setup, custom error page
+- main_go_router_2.dart - Example with named route, passing parameters via path
+parameters and query parameters, custom transitions.
+- main_go_router_3.dart - Example of redirections
+- main_go_router_4.dart - Nested navigation using ShellRoute
+- main_go_router_5.dart - Nested navigation with preserved states using
+StatefulShellRoute and StatefulShellBranches.
